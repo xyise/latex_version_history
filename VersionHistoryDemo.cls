@@ -83,13 +83,13 @@
 %%% Front-page items
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\@documentTitle}{\colorbox{red!30}{Set \texttt{\textbackslash documentTitle}}}
+\newcommand{\@documentTitle}{\colorbox{red!30}{Set document title by specifying \texttt{\textbackslash documentTitle}}}
 \newcommand{\documentTitle}[1]{\edef\@documentTitle{#1}}
 
-\newcommand{\@documentType}{\colorbox{red!30}{Set \texttt{\textbackslash documentType}}}
+\newcommand{\@documentType}{\colorbox{red!30}{Set document type by specifying \texttt{\textbackslash documentType}}}
 \newcommand{\documentType}[1]{\edef\@documentType{#1}}
 
-\newcommand{\@documentTeamName}{\colorbox{red!30}{Set \texttt{\textbackslash documentTeamName}}}
+\newcommand{\@documentTeamName}{\colorbox{red!30}{Set team name by specifying \texttt{\textbackslash documentTeamName}}}
 \newcommand{\documentTeamName}[1]{\edef\@documentTeamName{#1}}
 
 
@@ -143,20 +143,26 @@
 
 \thispagestyle{coverpagestyle}
 
+\begin{center}
+  {\large \@documentTitle}
+\end{center}
+
 This is a front page containing adminstrative information:
 
 \begin{itemize}
-  \item Title: \@documentTitle
 
   \item Document Type: \@documentType
-  
-  \item Last Author: \@lastEntryAuthor.
-  
-  \item Team: \@documentTeamName
 
+  \item Team: \@documentTeamName
+  
+  \item Author: \@lastEntryAuthor
+
+  \item Version: \@lastEntryVersion
+  
   \item Date: \@lastEntryDate
   
 \end{itemize}
+
 
 \clearpage
 
@@ -201,6 +207,8 @@ Let's show the version history in an itemized format.
 \bigskip
 
 Or, show it in a tabular format
+
+\bigskip
 
 \@printVersionHistoryAsTable
 
